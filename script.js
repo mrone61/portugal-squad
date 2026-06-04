@@ -1,9 +1,9 @@
-// ======================================
-// PORTUGAL WORLD CUP 2026 DASHBOARD
-// ======================================
+// ================================
+// PORTUGAL WORLD CUP 2026
+// ================================
 
 // ================================
-// LOADING SCREEN
+// LOADER
 // ================================
 
 window.addEventListener("load", () => {
@@ -13,14 +13,16 @@ window.addEventListener("load", () => {
 
     setTimeout(() => {
 
-        loader.classList.add("hide");
+        loader.classList.add(
+            "loader-hidden"
+        );
 
     }, 1500);
 
 });
 
 // ================================
-// DIGITAL CLOCK
+// CLOCK & DATE
 // ================================
 
 function updateClock() {
@@ -31,12 +33,15 @@ function updateClock() {
         now.toLocaleTimeString("id-ID");
 
     const date =
-        now.toLocaleDateString("id-ID", {
-            weekday: "long",
-            day: "numeric",
-            month: "long",
-            year: "numeric"
-        });
+        now.toLocaleDateString(
+            "id-ID",
+            {
+                weekday: "long",
+                day: "numeric",
+                month: "long",
+                year: "numeric"
+            }
+        );
 
     document.getElementById("clock")
         .textContent = time;
@@ -55,13 +60,18 @@ setInterval(updateClock, 1000);
 // ================================
 
 const darkModeBtn =
-    document.getElementById("darkModeBtn");
+    document.getElementById(
+        "darkModeBtn"
+    );
 
 if (
-    localStorage.getItem("theme") === "dark"
+    localStorage.getItem("theme")
+    === "dark"
 ) {
 
-    document.body.classList.add("dark");
+    document.body.classList.add(
+        "dark"
+    );
 
     darkModeBtn.innerHTML =
         "☀️ Light Mode";
@@ -115,12 +125,12 @@ darkModeBtn.addEventListener(
 );
 
 // ================================
-// MENU 3 TITIK
+// MENU
 // ================================
 
-const menuToggle =
+const menuBtn =
     document.getElementById(
-        "menuToggle"
+        "menuBtn"
     );
 
 const dropdownMenu =
@@ -128,7 +138,7 @@ const dropdownMenu =
         "dropdownMenu"
     );
 
-menuToggle.addEventListener(
+menuBtn.addEventListener(
     "click",
     () => {
 
@@ -186,7 +196,9 @@ window.addEventListener(
     "click",
     (e) => {
 
-        if (e.target === aboutModal) {
+        if (
+            e.target === aboutModal
+        ) {
 
             aboutModal.style.display =
                 "none";
@@ -200,12 +212,12 @@ window.addEventListener(
 // JOIN GROUP
 // ================================
 
-const joinGroupBtn =
+const joinBtn =
     document.getElementById(
-        "joinGroupBtn"
+        "joinBtn"
     );
 
-joinGroupBtn.addEventListener(
+joinBtn.addEventListener(
     "click",
     () => {
 
@@ -218,7 +230,7 @@ joinGroupBtn.addEventListener(
 );
 
 // ================================
-// TAB NAVIGATION
+// TAB SYSTEM
 // ================================
 
 const tabButtons =
@@ -231,54 +243,58 @@ const tabContents =
         ".tab-content"
     );
 
-tabButtons.forEach((button) => {
+tabButtons.forEach(
+    (button) => {
 
-    button.addEventListener(
-        "click",
-        () => {
+        button.addEventListener(
+            "click",
+            () => {
 
-            const target =
-                button.dataset.tab;
+                const target =
+                    button.dataset.tab;
 
-            tabButtons.forEach(
-                (btn) => {
+                tabButtons.forEach(
+                    (btn) => {
 
-                    btn.classList.remove(
-                        "active"
-                    );
+                        btn.classList.remove(
+                            "active"
+                        );
 
-                }
-            );
+                    }
+                );
 
-            tabContents.forEach(
-                (content) => {
+                tabContents.forEach(
+                    (tab) => {
 
-                    content.classList.remove(
-                        "active"
-                    );
+                        tab.classList.remove(
+                            "active"
+                        );
 
-                }
-            );
+                    }
+                );
 
-            button.classList.add(
-                "active"
-            );
-
-            document
-                .getElementById(target)
-                .classList.add(
+                button.classList.add(
                     "active"
                 );
 
-            localStorage.setItem(
-                "activeTab",
-                target
-            );
+                document
+                    .getElementById(
+                        target
+                    )
+                    .classList.add(
+                        "active"
+                    );
 
-        }
-    );
+                localStorage.setItem(
+                    "activeTab",
+                    target
+                );
 
-});
+            }
+        );
+
+    }
+);
 
 // ================================
 // LOAD LAST TAB
@@ -291,42 +307,54 @@ const savedTab =
 
 if (savedTab) {
 
-    tabButtons.forEach((btn) => {
+    tabButtons.forEach(
+        (btn) => {
 
-        btn.classList.remove(
-            "active"
-        );
+            btn.classList.remove(
+                "active"
+            );
 
-        if (
-            btn.dataset.tab === savedTab
-        ) {
+            if (
+                btn.dataset.tab
+                === savedTab
+            ) {
 
-            btn.classList.add(
+                btn.classList.add(
+                    "active"
+                );
+
+            }
+
+        }
+    );
+
+    tabContents.forEach(
+        (tab) => {
+
+            tab.classList.remove(
                 "active"
             );
 
         }
+    );
 
-    });
+    const targetTab =
+        document.getElementById(
+            savedTab
+        );
 
-    tabContents.forEach((tab) => {
+    if (targetTab) {
 
-        tab.classList.remove(
+        targetTab.classList.add(
             "active"
         );
 
-    });
-
-    document
-        .getElementById(savedTab)
-        .classList.add(
-            "active"
-        );
+    }
 
 }
 
 // ================================
-// BACK TO TOP
+// TOP BUTTON
 // ================================
 
 const topBtn =
@@ -368,20 +396,24 @@ topBtn.addEventListener(
 );
 
 // ================================
-// NOTIFICATION SYSTEM
+// NOTIFICATION
 // ================================
 
-function showNotification(message) {
+function showNotification(
+    message
+) {
 
     const notification =
-        document.createElement("div");
-
-    notification.innerHTML =
-        message;
+        document.createElement(
+            "div"
+        );
 
     notification.classList.add(
         "notification"
     );
+
+    notification.innerHTML =
+        message;
 
     document.body.appendChild(
         notification
@@ -405,7 +437,7 @@ function showNotification(message) {
 
             notification.remove();
 
-        }, 500);
+        }, 400);
 
     }, 3000);
 
@@ -422,21 +454,47 @@ window.addEventListener(
         setTimeout(() => {
 
             showNotification(
-                "Welcome to Portugal World Cup 2026 🇵🇹"
+                "Welcome Portugal Fans 🇵🇹"
             );
 
-        }, 1800);
+        }, 2000);
 
     }
 );
 
 // ================================
-// SCROLL REVEAL
+// CLICK OUTSIDE MENU
 // ================================
 
-const revealElements =
+document.addEventListener(
+    "click",
+    (e) => {
+
+        if (
+            !menuBtn.contains(
+                e.target
+            ) &&
+            !dropdownMenu.contains(
+                e.target
+            )
+        ) {
+
+            dropdownMenu.classList.remove(
+                "show"
+            );
+
+        }
+
+    }
+);
+
+// ================================
+// SCROLL ANIMATION
+// ================================
+
+const animatedItems =
     document.querySelectorAll(
-        ".player-card, .trophy-card, .info-box"
+        ".player-card, .info-card, .trophy-card"
     );
 
 const observer =
@@ -467,54 +525,33 @@ const observer =
         }
     );
 
-revealElements.forEach(
-    (element) => {
+animatedItems.forEach(
+    (item) => {
 
-        element.style.opacity = "0";
+        item.style.opacity =
+            "0";
 
-        element.style.transform =
+        item.style.transform =
             "translateY(30px)";
 
-        element.style.transition =
-            "all .6s ease";
+        item.style.transition =
+            ".6s";
 
         observer.observe(
-            element
+            item
         );
 
     }
 );
 
 // ================================
-// CLOSE MENU IF CLICK OUTSIDE
-// ================================
-
-document.addEventListener(
-    "click",
-    (e) => {
-
-        if (
-            !menuToggle.contains(e.target) &&
-            !dropdownMenu.contains(e.target)
-        ) {
-
-            dropdownMenu.classList.remove(
-                "show"
-            );
-
-        }
-
-    }
-);
-
-// ================================
-// CONSOLE SIGNATURE
+// CONSOLE
 // ================================
 
 console.log(`
-=====================================
-PORTUGAL WORLD CUP 2026 DASHBOARD
-Developed For UAS Project
-HTML • CSS • JavaScript
-=====================================
+==================================
+PORTUGAL WORLD CUP 2026
+Responsive Dashboard
+HTML CSS JavaScript
+==================================
 `);
