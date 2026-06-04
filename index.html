@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portugal World Cup 2026 Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+        <div class="header-left">
+            <div class="logo">🏆</div>
+
+            <div>
+                <h1>PORTUGAL WORLD CUP 2026</h1>
+                <p>Official Team Dashboard</p>
+            </div>
+        </div>
+
+        <div class="header-right">
+
+            <div class="datetime">
+                <h2 id="clock">00:00:00</h2>
+                <span id="date">Loading...</span>
+            </div>
+
+            <button id="darkModeBtn">
+                🌙 Dark Mode
+            </button>
+
+        </div>
+
+    </header>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="hero-image">
+
+            <img
+            src="https://flagcdn.com/w640/pt.png"
+            alt="Portugal Flag"
+            id="teamFlag">
+
+        </div>
+
+        <div class="hero-content">
+
+            <h2>Portugal National Team</h2>
+
+            <p>
+                Portugal hadir di FIFA World Cup 2026
+                dengan skuad bertabur bintang yang dipimpin
+                Cristiano Ronaldo dan dilatih Roberto Martínez.
+            </p>
+
+            <div class="team-info">
+
+                <div class="info-box">
+                    <h3>Kapten</h3>
+                    <p>Cristiano Ronaldo</p>
+                </div>
+
+                <div class="info-box">
+                    <h3>Pelatih</h3>
+                    <p>Roberto Martínez</p>
+                </div>
+
+                <div class="info-box">
+                    <h3>Federasi</h3>
+                    <p>FPF</p>
+                </div>
+
+                <div class="info-box">
+                    <h3>Negara</h3>
+                    <p>Portugal</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- MENU -->
+
+    <nav class="menu">
+
+        <button class="tab-btn active" data-tab="overview">
+            Overview
+        </button>
+
+        <button class="tab-btn" data-tab="squad">
+            Squad
+        </button>
+
+        <button class="tab-btn" data-tab="formation">
+            Formation
+        </button>
+
+        <button class="tab-btn" data-tab="statistics">
+            Statistics
+        </button>
+
+        <button class="tab-btn" data-tab="trophies">
+            Trophy Room
+        </button>
+
+    </nav>
+
+    <!-- OVERVIEW -->
+
+    <section id="overview" class="tab-content active">
+
+        <div class="card">
+
+            <h2>Portugal Overview</h2>
+
+            <p>
+                Portugal merupakan salah satu kandidat kuat
+                pada FIFA World Cup 2026 dengan kombinasi
+                pemain senior dan talenta muda terbaik Eropa.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- SQUAD -->
+
+    <section id="squad" class="tab-content">
+
+        <h2 class="section-title">
+            Starting XI Portugal
+        </h2>
+
+        <div class="players-grid">
+
+            <div class="player-card">
+                <h3>Diogo Costa</h3>
+                <span>Goalkeeper</span>
+            </div>
+
+            <div class="player-card">
+                <h3>João Cancelo</h3>
+                <span>Right Back</span>
+            </div>
+
+            <div class="player-card">
+                <h3>Rúben Dias</h3>
+                <span>Center Back</span>
+            </div>
+
+            <div class="player-card">
+                <h3>Gonçalo Inácio</h3>
+                <span>Center Back</span>
+            </div>
+
+            <div class="player-card">
+                <h3>Nuno Mendes</h3>
+                <span>Left Back</span>
+            </div>
+
+            <div class="player-card">
+                <h3>Vitinha</h3>
+                <span>Midfielder</span>
+            </div>
+
+            <div class="player-card">
+                <h3>João Neves</h3>
+                <span>Midfielder</span>
+            </div>
+
+            <div class="player-card">
+                <h3>Bruno Fernandes</h3>
+                <span>Attacking Midfielder</span>
+            </div>
+
+            <div class="player-card">
+                <h3>Bernardo Silva</h3>
+                <span>Right Wing</span>
+            </div>
+
+            <div class="player-card">
+                <h3>Rafael Leão</h3>
+                <span>Left Wing</span>
+            </div>
+
+            <div class="player-card captain">
+                <h3>Cristiano Ronaldo</h3>
+                <span>Captain & Striker</span>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FORMATION -->
+
+    <section id="formation" class="tab-content">
+
+        <h2 class="section-title">
+            Formation 4-2-3-1
+        </h2>
+
+        <div class="football-field">
+
+            <div class="line striker">
+                <div class="position">
+                    Ronaldo
+                </div>
+            </div>
+
+            <div class="line winger">
+
+                <div class="position">
+                    Leão
+                </div>
+
+                <div class="position">
+                    Bernardo
+                </div>
+
+            </div>
+
+            <div class="line">
+
+                <div class="position">
+                    Bruno Fernandes
+                </div>
+
+            </div>
+
+            <div class="line">
+
+                <div class="position">
+                    Vitinha
+                </div>
+
+                <div class="position">
+                    João Neves
+                </div>
+
+            </div>
+
+            <div class="line defender">
+
+                <div class="position">
+                    Nuno
+                </div>
+
+                <div class="position">
+                    Dias
+                </div>
+
+                <div class="position">
+                    Inácio
+                </div>
+
+                <div class="position">
+                    Cancelo
+                </div>
+
+            </div>
+
+            <div class="line">
+
+                <div class="position keeper">
+                    Diogo Costa
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- STATISTICS -->
+
+    <section id="statistics" class="tab-content">
+
+        <h2 class="section-title">
+            Team Statistics
+        </h2>
+
+        <div class="stat">
+
+            <span>Attack</span>
+
+            <div class="bar">
+                <div class="fill attack">
+                    92%
+                </div>
+            </div>
+
+        </div>
+
+        <div class="stat">
+
+            <span>Midfield</span>
+
+            <div class="bar">
+                <div class="fill midfield">
+                    95%
+                </div>
+            </div>
+
+        </div>
+
+        <div class="stat">
+
+            <span>Defense</span>
+
+            <div class="bar">
+                <div class="fill defense">
+                    88%
+                </div>
+            </div>
+
+        </div>
+
+        <div class="stat">
+
+            <span>Experience</span>
+
+            <div class="bar">
+                <div class="fill experience">
+                    99%
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- TROPHY -->
+
+    <section id="trophies" class="tab-content">
+
+        <h2 class="section-title">
+            Portugal Trophy Room
+        </h2>
+
+        <div class="trophy-grid">
+
+            <div class="trophy-card">
+                🏆 UEFA Euro 2016
+            </div>
+
+            <div class="trophy-card">
+                🏆 Nations League 2019
+            </div>
+
+            <div class="trophy-card">
+                🏆 Nations League 2025
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <button id="saveBtn">
+            💾 Save
+        </button>
+
+        <button id="resetBtn">
+            🔄 Reset
+        </button>
+
+        <button id="exitBtn">
+            ❌ Exit
+        </button>
+
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
