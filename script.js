@@ -1,182 +1,387 @@
-// =====================================
+// ======================================
 // PORTUGAL WORLD CUP 2026 DASHBOARD
-// =====================================
+// ======================================
 
-// ===========================
-// CLOCK & DATE
-// ===========================
+// ================================
+// LOADING SCREEN
+// ================================
+
+window.addEventListener("load", () => {
+
+    const loader =
+        document.getElementById("loader");
+
+    setTimeout(() => {
+
+        loader.classList.add("hide");
+
+    }, 1500);
+
+});
+
+// ================================
+// DIGITAL CLOCK
+// ================================
 
 function updateClock() {
 
     const now = new Date();
 
-    const time = now.toLocaleTimeString("id-ID");
+    const time =
+        now.toLocaleTimeString("id-ID");
 
-    const date = now.toLocaleDateString("id-ID", {
-        weekday: "long",
-        day: "numeric",
-        month: "long",
-        year: "numeric"
-    });
+    const date =
+        now.toLocaleDateString("id-ID", {
+            weekday: "long",
+            day: "numeric",
+            month: "long",
+            year: "numeric"
+        });
 
-    document.getElementById("clock").textContent = time;
-    document.getElementById("date").textContent = date;
+    document.getElementById("clock")
+        .textContent = time;
+
+    document.getElementById("date")
+        .textContent = date;
+
 }
 
-setInterval(updateClock, 1000);
 updateClock();
 
+setInterval(updateClock, 1000);
 
-// ===========================
+// ================================
 // DARK MODE
-// ===========================
+// ================================
 
-const darkModeBtn = document.getElementById("darkModeBtn");
+const darkModeBtn =
+    document.getElementById("darkModeBtn");
 
-if (localStorage.getItem("theme") === "dark") {
+if (
+    localStorage.getItem("theme") === "dark"
+) {
 
     document.body.classList.add("dark");
 
     darkModeBtn.innerHTML =
         "☀️ Light Mode";
+
 }
 
-darkModeBtn.addEventListener("click", () => {
+darkModeBtn.addEventListener(
+    "click",
+    () => {
 
-    document.body.classList.toggle("dark");
-
-    const isDark =
-        document.body.classList.contains("dark");
-
-    if (isDark) {
-
-        localStorage.setItem(
-            "theme",
+        document.body.classList.toggle(
             "dark"
         );
 
-        darkModeBtn.innerHTML =
-            "☀️ Light Mode";
+        const isDark =
+            document.body.classList.contains(
+                "dark"
+            );
 
-        showNotification(
-            "Dark Mode Activated",
-            "success"
-        );
+        if (isDark) {
 
-    } else {
+            localStorage.setItem(
+                "theme",
+                "dark"
+            );
 
-        localStorage.setItem(
-            "theme",
-            "light"
-        );
+            darkModeBtn.innerHTML =
+                "☀️ Light Mode";
 
-        darkModeBtn.innerHTML =
-            "🌙 Dark Mode";
+            showNotification(
+                "Dark Mode Enabled"
+            );
 
-        showNotification(
-            "Light Mode Activated",
-            "success"
-        );
+        } else {
+
+            localStorage.setItem(
+                "theme",
+                "light"
+            );
+
+            darkModeBtn.innerHTML =
+                "🌙 Dark Mode";
+
+            showNotification(
+                "Light Mode Enabled"
+            );
+
+        }
+
     }
+);
 
-});
+// ================================
+// MENU 3 TITIK
+// ================================
 
+const menuToggle =
+    document.getElementById(
+        "menuToggle"
+    );
 
-// ===========================
+const dropdownMenu =
+    document.getElementById(
+        "dropdownMenu"
+    );
+
+menuToggle.addEventListener(
+    "click",
+    () => {
+
+        dropdownMenu.classList.toggle(
+            "show"
+        );
+
+    }
+);
+
+// ================================
+// ABOUT MODAL
+// ================================
+
+const aboutBtn =
+    document.getElementById(
+        "aboutBtn"
+    );
+
+const aboutModal =
+    document.getElementById(
+        "aboutModal"
+    );
+
+const closeModal =
+    document.getElementById(
+        "closeModal"
+    );
+
+aboutBtn.addEventListener(
+    "click",
+    () => {
+
+        aboutModal.style.display =
+            "flex";
+
+        dropdownMenu.classList.remove(
+            "show"
+        );
+
+    }
+);
+
+closeModal.addEventListener(
+    "click",
+    () => {
+
+        aboutModal.style.display =
+            "none";
+
+    }
+);
+
+window.addEventListener(
+    "click",
+    (e) => {
+
+        if (e.target === aboutModal) {
+
+            aboutModal.style.display =
+                "none";
+
+        }
+
+    }
+);
+
+// ================================
+// JOIN GROUP
+// ================================
+
+const joinGroupBtn =
+    document.getElementById(
+        "joinGroupBtn"
+    );
+
+joinGroupBtn.addEventListener(
+    "click",
+    () => {
+
+        window.open(
+            "https://chat.whatsapp.com/KbWf8mrpRey1tIaZ6NJAh0?s=cl&p=a&ilr=4",
+            "_blank"
+        );
+
+    }
+);
+
+// ================================
 // TAB NAVIGATION
-// ===========================
+// ================================
 
 const tabButtons =
-    document.querySelectorAll(".tab-btn");
+    document.querySelectorAll(
+        ".tab-btn"
+    );
 
 const tabContents =
-    document.querySelectorAll(".tab-content");
+    document.querySelectorAll(
+        ".tab-content"
+    );
 
-tabButtons.forEach(button => {
+tabButtons.forEach((button) => {
 
-    button.addEventListener("click", () => {
+    button.addEventListener(
+        "click",
+        () => {
 
-        const target =
-            button.dataset.tab;
+            const target =
+                button.dataset.tab;
 
-        tabButtons.forEach(btn => {
-            btn.classList.remove("active");
-        });
+            tabButtons.forEach(
+                (btn) => {
 
-        tabContents.forEach(content => {
-            content.classList.remove("active");
-        });
+                    btn.classList.remove(
+                        "active"
+                    );
 
-        button.classList.add("active");
+                }
+            );
 
-        document
-            .getElementById(target)
-            .classList.add("active");
+            tabContents.forEach(
+                (content) => {
 
-        localStorage.setItem(
-            "activeTab",
-            target
-        );
-    });
+                    content.classList.remove(
+                        "active"
+                    );
+
+                }
+            );
+
+            button.classList.add(
+                "active"
+            );
+
+            document
+                .getElementById(target)
+                .classList.add(
+                    "active"
+                );
+
+            localStorage.setItem(
+                "activeTab",
+                target
+            );
+
+        }
+    );
 
 });
 
-
-// ===========================
+// ================================
 // LOAD LAST TAB
-// ===========================
+// ================================
 
 const savedTab =
-    localStorage.getItem("activeTab");
+    localStorage.getItem(
+        "activeTab"
+    );
 
 if (savedTab) {
 
-    document
-        .querySelectorAll(".tab-btn")
-        .forEach(btn => {
+    tabButtons.forEach((btn) => {
 
-            btn.classList.remove("active");
+        btn.classList.remove(
+            "active"
+        );
 
-            if (
-                btn.dataset.tab === savedTab
-            ) {
-                btn.classList.add("active");
-            }
+        if (
+            btn.dataset.tab === savedTab
+        ) {
 
-        });
+            btn.classList.add(
+                "active"
+            );
 
-    document
-        .querySelectorAll(".tab-content")
-        .forEach(tab => {
+        }
 
-            tab.classList.remove("active");
+    });
 
-        });
+    tabContents.forEach((tab) => {
+
+        tab.classList.remove(
+            "active"
+        );
+
+    });
 
     document
         .getElementById(savedTab)
-        .classList.add("active");
+        .classList.add(
+            "active"
+        );
 
 }
 
+// ================================
+// BACK TO TOP
+// ================================
 
-// ===========================
+const topBtn =
+    document.getElementById(
+        "topBtn"
+    );
+
+window.addEventListener(
+    "scroll",
+    () => {
+
+        if (
+            window.scrollY > 300
+        ) {
+
+            topBtn.style.display =
+                "block";
+
+        } else {
+
+            topBtn.style.display =
+                "none";
+
+        }
+
+    }
+);
+
+topBtn.addEventListener(
+    "click",
+    () => {
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+    }
+);
+
+// ================================
 // NOTIFICATION SYSTEM
-// ===========================
+// ================================
 
-function showNotification(
-    message,
-    type = "success"
-) {
+function showNotification(message) {
 
     const notification =
         document.createElement("div");
 
-    notification.className =
-        `notification ${type}`;
-
     notification.innerHTML =
         message;
+
+    notification.classList.add(
+        "notification"
+    );
 
     document.body.appendChild(
         notification
@@ -200,86 +405,15 @@ function showNotification(
 
             notification.remove();
 
-        }, 300);
+        }, 500);
 
     }, 3000);
+
 }
 
-
-
-const menuToggle =
-document.getElementById("menuToggle");
-
-const dropdownMenu =
-document.getElementById("dropdownMenu");
-
-menuToggle.addEventListener("click", () => {
-
-    dropdownMenu.classList.toggle("show");
-
-});
-
-document
-.getElementById("joinGroupBtn")
-.addEventListener("click", () => {
-
-    window.open(
-        "https://chat.whatsapp.com/KbWf8mrpRey1tIaZ6NJAh0?s=cl&p=a&ilr=4",
-        "_blank"
-    );
-
-});
-
-document
-.getElementById("aboutBtn")
-.addEventListener("click", () => {
-
-    showNotification(
-        "Portugal World Cup 2026 Dashboard | UAS Project",
-        "success"
-    );
-
-});
-
-
-
-// ===========================
-// PLAYER CARD ANIMATION
-// ===========================
-
-const playerCards =
-    document.querySelectorAll(
-        ".player-card"
-    );
-
-playerCards.forEach(card => {
-
-    card.addEventListener(
-        "mouseenter",
-        () => {
-
-            card.style.transform =
-                "translateY(-10px) scale(1.03)";
-
-        }
-    );
-
-    card.addEventListener(
-        "mouseleave",
-        () => {
-
-            card.style.transform =
-                "translateY(0) scale(1)";
-
-        }
-    );
-
-});
-
-
-// ===========================
+// ================================
 // WELCOME MESSAGE
-// ===========================
+// ================================
 
 window.addEventListener(
     "load",
@@ -288,19 +422,17 @@ window.addEventListener(
         setTimeout(() => {
 
             showNotification(
-                "Welcome to Portugal World Cup 2026 Dashboard 🇵🇹",
-                "success"
+                "Welcome to Portugal World Cup 2026 🇵🇹"
             );
 
-        }, 800);
+        }, 1800);
 
     }
 );
 
-
-// ===========================
-// SCROLL REVEAL EFFECT
-// ===========================
+// ================================
+// SCROLL REVEAL
+// ================================
 
 const revealElements =
     document.querySelectorAll(
@@ -309,10 +441,10 @@ const revealElements =
 
 const observer =
     new IntersectionObserver(
-        entries => {
+        (entries) => {
 
             entries.forEach(
-                entry => {
+                (entry) => {
 
                     if (
                         entry.isIntersecting
@@ -323,6 +455,7 @@ const observer =
 
                         entry.target.style.transform =
                             "translateY(0)";
+
                     }
 
                 }
@@ -335,11 +468,13 @@ const observer =
     );
 
 revealElements.forEach(
-    element => {
+    (element) => {
 
         element.style.opacity = "0";
+
         element.style.transform =
-            "translateY(20px)";
+            "translateY(30px)";
+
         element.style.transition =
             "all .6s ease";
 
@@ -350,15 +485,36 @@ revealElements.forEach(
     }
 );
 
+// ================================
+// CLOSE MENU IF CLICK OUTSIDE
+// ================================
 
-// ===========================
+document.addEventListener(
+    "click",
+    (e) => {
+
+        if (
+            !menuToggle.contains(e.target) &&
+            !dropdownMenu.contains(e.target)
+        ) {
+
+            dropdownMenu.classList.remove(
+                "show"
+            );
+
+        }
+
+    }
+);
+
+// ================================
 // CONSOLE SIGNATURE
-// ===========================
+// ================================
 
 console.log(`
-=================================
+=====================================
 PORTUGAL WORLD CUP 2026 DASHBOARD
-Developed for UAS Project
+Developed For UAS Project
 HTML • CSS • JavaScript
-=================================
+=====================================
 `);
