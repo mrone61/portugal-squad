@@ -2,63 +2,44 @@
 <html lang="id">
 
 <head>
-
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portugal World Cup 2026</title>
 
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
 
-    <title>
-        Portugal World Cup 2026 Dashboard
-    </title>
-
-    <link rel="stylesheet"
-        href="style.css">
-
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
-
 </head>
 
 <body>
 
-    <!-- LOADING SCREEN -->
+    <!-- LOADING -->
 
-    <div class="loader" id="loader">
-
-        <h1>🏆</h1>
-
-        <h2>
-            PORTUGAL WORLD CUP 2026
-        </h2>
-
-        <p>
-            Loading Dashboard...
-        </p>
-
+    <div id="loader">
+        <div class="loader-content">
+            <h1>🏆</h1>
+            <h2>PORTUGAL WORLD CUP 2026</h2>
+            <p>Loading Dashboard...</p>
+        </div>
     </div>
 
-    <!-- MENU 3 TITIK -->
+    <!-- MENU -->
 
-    <div class="menu-wrapper">
+    <div class="menu-container">
 
-        <button id="menuToggle">
+        <button id="menuBtn">
             ⋮
         </button>
 
-        <div id="dropdownMenu"
-            class="dropdown-menu">
+        <div id="dropdownMenu">
 
             <button id="aboutBtn">
-
                 ℹ️ About
-
             </button>
 
-            <button id="joinGroupBtn">
-
+            <button id="joinBtn">
                 👥 Join Group
-
             </button>
 
         </div>
@@ -67,61 +48,26 @@
 
     <!-- ABOUT MODAL -->
 
-    <div class="modal"
-        id="aboutModal">
+    <div id="aboutModal" class="modal">
 
         <div class="modal-content">
 
-            <h2>
-                🇵🇹 Portugal World Cup 2026
-            </h2>
+            <h2>🇵🇹 Portugal World Cup 2026</h2>
 
             <p>
-
-                Portugal World Cup 2026 Dashboard
-                adalah website informasi Tim Nasional
-                Portugal yang dibuat untuk kebutuhan
-                tugas UAS Pemrograman Web.
-
+                Dashboard interaktif Tim Nasional Portugal
+                untuk FIFA World Cup 2026.
             </p>
 
             <br>
 
             <p>
-
-                Fitur:
-
-                <br>
-                • Dark Mode
-                <br>
-                • Squad Portugal
-                <br>
-                • Formation
-                <br>
-                • Statistics
-                <br>
-                • Trophy Room
-                <br>
-                • Responsive Design
-                <br>
-                • Interactive Dashboard
-
+                Dibuat menggunakan:
+                HTML, CSS dan JavaScript.
             </p>
 
-            <br>
-
-            <p>
-
-                Built With:
-                HTML • CSS • JavaScript
-
-            </p>
-
-            <button class="close-modal"
-                id="closeModal">
-
+            <button id="closeModal">
                 Close
-
             </button>
 
         </div>
@@ -130,53 +76,30 @@
 
     <!-- HEADER -->
 
-    <header class="header">
+    <header>
 
-        <div class="header-center">
-
-            <div class="logo">
-
-                🏆
-
-            </div>
+        <div class="header-content">
 
             <h1>
-
                 PORTUGAL WORLD CUP 2026
-
             </h1>
 
             <p>
-
-                Official National Team Dashboard
-
+                Official Fan Dashboard
             </p>
 
-        </div>
+            <div class="header-info">
 
-        <div class="header-right">
+                <div>
+                    <h3 id="clock">00:00:00</h3>
+                    <span id="date">Loading...</span>
+                </div>
 
-            <div class="datetime">
-
-                <h2 id="clock">
-
-                    00:00:00
-
-                </h2>
-
-                <span id="date">
-
-                    Loading...
-
-                </span>
+                <button id="darkModeBtn">
+                    🌙 Dark Mode
+                </button>
 
             </div>
-
-            <button id="darkModeBtn">
-
-                🌙 Dark Mode
-
-            </button>
 
         </div>
 
@@ -186,81 +109,24 @@
 
     <section class="hero">
 
-        <div class="hero-image">
+        <div class="overlay">
 
-            <img src="https://flagcdn.com/w640/pt.png"
-                alt="Portugal Flag">
-
-        </div>
-
-        <div class="hero-content">
-
-            <h2>
-
-                Portugal National Team
-
-            </h2>
+            <h1>
+                FORÇA PORTUGAL 🇵🇹
+            </h1>
 
             <p>
-
-                Portugal hadir di FIFA World Cup 2026
-                dengan skuad bertabur bintang yang
-                dipimpin Cristiano Ronaldo dan
-                dilatih Roberto Martínez.
-
+                Portugal menuju FIFA World Cup 2026
+                dengan skuad penuh bintang.
             </p>
-
-            <div class="team-info">
-
-                <div class="info-box">
-
-                    <h3>Kapten</h3>
-
-                    <p>
-                        Cristiano Ronaldo
-                    </p>
-
-                </div>
-
-                <div class="info-box">
-
-                    <h3>Pelatih</h3>
-
-                    <p>
-                        Roberto Martínez
-                    </p>
-
-                </div>
-
-                <div class="info-box">
-
-                    <h3>Federasi</h3>
-
-                    <p>
-                        FPF
-                    </p>
-
-                </div>
-
-                <div class="info-box">
-
-                    <h3>Negara</h3>
-
-                    <p>
-                        Portugal
-                    </p>
-
-                </div>
-
-            </div>
 
         </div>
 
     </section>
 
-    <!-- MENU TAB -->
+    <!-- NAVIGATION -->
 
-    <nav class="menu">
+    <nav>
 
         <button class="tab-btn active"
             data-tab="overview">
@@ -270,9 +136,9 @@
         </button>
 
         <button class="tab-btn"
-            data-tab="squad">
+            data-tab="players">
 
-            Squad
+            Players
 
         </button>
 
@@ -284,7 +150,7 @@
         </button>
 
         <button class="tab-btn"
-            data-tab="statistics">
+            data-tab="stats">
 
             Statistics
 
@@ -293,7 +159,7 @@
         <button class="tab-btn"
             data-tab="trophies">
 
-            Trophy Room
+            Trophies
 
         </button>
 
@@ -304,68 +170,64 @@
     <section id="overview"
         class="tab-content active">
 
-        <div class="card">
+        <div class="glass-card">
 
             <h2>
-
-                Portugal Overview
-
+                Portugal National Team
             </h2>
-
-            <br>
 
             <p>
 
-                Portugal merupakan salah satu
-                kandidat kuat FIFA World Cup 2026
-                dengan kombinasi pemain senior
-                dan talenta muda terbaik Eropa.
+                Dipimpin oleh Cristiano Ronaldo,
+                Portugal menjadi salah satu kandidat
+                kuat FIFA World Cup 2026.
 
             </p>
 
         </div>
 
+        <div class="overview-grid">
+
+            <div class="info-card">
+                <h3>Kapten</h3>
+                <p>Cristiano Ronaldo</p>
+            </div>
+
+            <div class="info-card">
+                <h3>Pelatih</h3>
+                <p>Roberto Martínez</p>
+            </div>
+
+            <div class="info-card">
+                <h3>Federasi</h3>
+                <p>FPF</p>
+            </div>
+
+            <div class="info-card">
+                <h3>Negara</h3>
+                <p>Portugal</p>
+            </div>
+
+        </div>
+
     </section>
 
-    <!-- SQUAD -->
+    <!-- PLAYERS -->
 
-    <section id="squad"
+    <section id="players"
         class="tab-content">
 
         <h2 class="section-title">
 
-            Starting XI Portugal
+            Starting XI
 
         </h2>
 
-        <div class="players-grid">
+        <div class="player-grid">
 
-            <div class="player-card">
-                Diogo Costa
-            </div>
-
-            <div class="player-card">
-                João Cancelo
-            </div>
-
-            <div class="player-card">
-                Rúben Dias
-            </div>
-
-            <div class="player-card">
-                Gonçalo Inácio
-            </div>
-
-            <div class="player-card">
-                Nuno Mendes
-            </div>
-
-            <div class="player-card">
-                Vitinha
-            </div>
-
-            <div class="player-card">
-                João Neves
+            <div class="player-card captain">
+                ⭐ Cristiano Ronaldo
+                <span>Captain</span>
             </div>
 
             <div class="player-card">
@@ -380,8 +242,32 @@
                 Rafael Leão
             </div>
 
-            <div class="player-card captain">
-                ⭐ Cristiano Ronaldo
+            <div class="player-card">
+                Vitinha
+            </div>
+
+            <div class="player-card">
+                João Neves
+            </div>
+
+            <div class="player-card">
+                Nuno Mendes
+            </div>
+
+            <div class="player-card">
+                Rúben Dias
+            </div>
+
+            <div class="player-card">
+                João Cancelo
+            </div>
+
+            <div class="player-card">
+                Gonçalo Inácio
+            </div>
+
+            <div class="player-card">
+                Diogo Costa
             </div>
 
         </div>
@@ -399,85 +285,48 @@
 
         </h2>
 
-        <div class="football-field">
+        <div class="field">
 
-            <div class="line">
-
-                <div class="position">
-                    Ronaldo
-                </div>
-
+            <div class="row">
+                <div class="position">Ronaldo</div>
             </div>
 
-            <div class="line winger">
-
-                <div class="position">
-                    Leão
-                </div>
-
-                <div class="position">
-                    Bernardo
-                </div>
-
+            <div class="row">
+                <div class="position">Leão</div>
+                <div class="position">Bernardo</div>
             </div>
 
-            <div class="line">
-
+            <div class="row">
                 <div class="position">
                     Bruno Fernandes
                 </div>
-
             </div>
 
-            <div class="line">
-
-                <div class="position">
-                    Vitinha
-                </div>
-
-                <div class="position">
-                    João Neves
-                </div>
-
+            <div class="row">
+                <div class="position">Vitinha</div>
+                <div class="position">João Neves</div>
             </div>
 
-            <div class="line defender">
-
-                <div class="position">
-                    Nuno
-                </div>
-
-                <div class="position">
-                    Dias
-                </div>
-
-                <div class="position">
-                    Inácio
-                </div>
-
-                <div class="position">
-                    Cancelo
-                </div>
-
+            <div class="row">
+                <div class="position">Nuno</div>
+                <div class="position">Dias</div>
+                <div class="position">Inácio</div>
+                <div class="position">Cancelo</div>
             </div>
 
-            <div class="line">
-
+            <div class="row">
                 <div class="position keeper">
-
                     Diogo Costa
-
                 </div>
-
             </div>
 
         </div>
 
     </section>
 
-    <!-- STATISTICS -->
+    <!-- STATS -->
 
-    <section id="statistics"
+    <section id="stats"
         class="tab-content">
 
         <h2 class="section-title">
@@ -486,68 +335,40 @@
 
         </h2>
 
-        <div class="stat">
-
-            <span>Attack</span>
-
+        <div class="stat-box">
+            <label>Attack</label>
             <div class="bar">
-
                 <div class="fill attack">
-
                     92%
-
                 </div>
-
             </div>
-
         </div>
 
-        <div class="stat">
-
-            <span>Midfield</span>
-
+        <div class="stat-box">
+            <label>Midfield</label>
             <div class="bar">
-
                 <div class="fill midfield">
-
                     95%
-
                 </div>
-
             </div>
-
         </div>
 
-        <div class="stat">
-
-            <span>Defense</span>
-
+        <div class="stat-box">
+            <label>Defense</label>
             <div class="bar">
-
                 <div class="fill defense">
-
                     88%
-
                 </div>
-
             </div>
-
         </div>
 
-        <div class="stat">
-
-            <span>Experience</span>
-
+        <div class="stat-box">
+            <label>Experience</label>
             <div class="bar">
-
                 <div class="fill experience">
-
                     99%
-
                 </div>
-
             </div>
-
         </div>
 
     </section>
@@ -566,33 +387,25 @@
         <div class="trophy-grid">
 
             <div class="trophy-card">
-
                 🏆 UEFA Euro 2016
-
             </div>
 
             <div class="trophy-card">
-
                 🏆 Nations League 2019
-
             </div>
 
             <div class="trophy-card">
-
                 🏆 Nations League 2025
-
             </div>
 
         </div>
 
     </section>
 
-    <!-- BACK TO TOP -->
+    <!-- TOP BUTTON -->
 
     <button id="topBtn">
-
         ↑
-
     </button>
 
     <script src="script.js"></script>
