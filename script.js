@@ -206,111 +206,41 @@ function showNotification(
 }
 
 
-// ===========================
-// SAVE BUTTON
-// ===========================
 
-const saveBtn =
-    document.getElementById("saveBtn");
+const menuToggle =
+document.getElementById("menuToggle");
 
-saveBtn.addEventListener("click", () => {
+const dropdownMenu =
+document.getElementById("dropdownMenu");
 
-    const dashboardData = {
+menuToggle.addEventListener("click", () => {
 
-        lastVisit:
-            new Date().toLocaleString(),
+    dropdownMenu.classList.toggle("show");
 
-        favoriteTeam:
-            "Portugal",
+});
 
-        activeTab:
-            localStorage.getItem(
-                "activeTab"
-            ) || "overview"
+document
+.getElementById("joinGroupBtn")
+.addEventListener("click", () => {
 
-    };
-
-    localStorage.setItem(
-        "dashboardData",
-        JSON.stringify(
-            dashboardData
-        )
+    window.open(
+        "https://chat.whatsapp.com/KbWf8mrpRey1tIaZ6NJAh0?s=cl&p=a&ilr=4",
+        "_blank"
     );
 
+});
+
+document
+.getElementById("aboutBtn")
+.addEventListener("click", () => {
+
     showNotification(
-        "Dashboard Saved Successfully",
+        "Portugal World Cup 2026 Dashboard | UAS Project",
         "success"
     );
 
 });
 
-
-// ===========================
-// RESET BUTTON
-// ===========================
-
-const resetBtn =
-    document.getElementById("resetBtn");
-
-resetBtn.addEventListener("click", () => {
-
-    const confirmReset =
-        confirm(
-            "Reset all settings?"
-        );
-
-    if (!confirmReset) return;
-
-    localStorage.removeItem(
-        "activeTab"
-    );
-
-    localStorage.removeItem(
-        "dashboardData"
-    );
-
-    localStorage.removeItem(
-        "theme"
-    );
-
-    showNotification(
-        "Dashboard Reset Complete",
-        "success"
-    );
-
-    setTimeout(() => {
-
-        location.reload();
-
-    }, 1500);
-
-});
-
-
-// ===========================
-// EXIT BUTTON
-// ===========================
-
-const exitBtn =
-    document.getElementById("exitBtn");
-
-exitBtn.addEventListener("click", () => {
-
-    showNotification(
-        "Thank you for visiting Portugal World Cup Dashboard",
-        "success"
-    );
-
-    setTimeout(() => {
-
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
-
-    }, 500);
-
-});
 
 
 // ===========================
