@@ -14,18 +14,9 @@ html{
 
 body{
     font-family:'Poppins',sans-serif;
-    background:#07111f;
+    background:#05080f;
     color:#ffffff;
     overflow-x:hidden;
-}
-
-/* =================================
-   DARK MODE
-================================= */
-
-body.dark{
-    background:#f5f5f5;
-    color:#111827;
 }
 
 /* =================================
@@ -34,15 +25,12 @@ body.dark{
 
 #loader{
     position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
+    inset:0;
     background:#000;
     display:flex;
     justify-content:center;
     align-items:center;
-    z-index:99999;
+    z-index:999999;
 }
 
 .loader-content{
@@ -50,13 +38,7 @@ body.dark{
 }
 
 .loader-content h1{
-    font-size:90px;
-    margin-bottom:15px;
-}
-
-.loader-content h2{
-    font-size:24px;
-    margin-bottom:10px;
+    font-size:80px;
 }
 
 .loader-hidden{
@@ -70,29 +52,41 @@ body.dark{
 ================================= */
 
 .menu-container{
+
     position:fixed;
-    top:15px;
-    left:15px;
-    z-index:9999;
+
+    top:20px;
+    left:20px;
+
+    z-index:999999;
 }
 
 #menuBtn{
+
     width:55px;
     height:55px;
-    border:none;
-    border-radius:14px;
-    cursor:pointer;
 
-    background:rgba(0,0,0,.75);
+    border:none;
+
+    border-radius:15px;
+
+    cursor:pointer;
 
     color:white;
 
     font-size:28px;
 
-    backdrop-filter:blur(15px);
+    background:
+    rgba(0,0,0,.75);
 
-    box-shadow:
-    0 5px 15px rgba(0,0,0,.3);
+    backdrop-filter:
+    blur(10px);
+
+    transition:.3s;
+}
+
+#menuBtn:hover{
+    transform:scale(1.05);
 }
 
 #dropdownMenu{
@@ -113,7 +107,7 @@ body.dark{
     background:#111827;
 
     box-shadow:
-    0 10px 25px rgba(0,0,0,.4);
+    0 10px 30px rgba(0,0,0,.5);
 }
 
 #dropdownMenu.show{
@@ -148,19 +142,20 @@ body.dark{
 ================================= */
 
 .modal{
-    display:none;
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
 
-    background:rgba(0,0,0,.8);
+    display:none;
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+    rgba(0,0,0,.8);
 
     justify-content:center;
     align-items:center;
 
-    z-index:99999;
+    z-index:999999;
 }
 
 .modal-content{
@@ -175,10 +170,6 @@ body.dark{
     border-radius:20px;
 
     text-align:center;
-}
-
-.modal-content h2{
-    margin-bottom:15px;
 }
 
 #closeModal{
@@ -208,8 +199,8 @@ body.dark{
 
     background:
     linear-gradient(
-        rgba(0,0,0,.65),
-        rgba(0,0,0,.65)
+    rgba(0,0,0,.78),
+    rgba(0,0,0,.78)
     ),
     url('portugal.jpg');
 
@@ -218,90 +209,79 @@ body.dark{
     background-repeat:no-repeat;
 
     display:flex;
-    justify-content:center;
     align-items:center;
-    text-align:center;
-
-}
-
-.hero-overlay{
-    width:100%;
-    padding:20px;
 }
 
 .hero-content{
 
-    position:relative;
+    width:100%;
 
-    max-width:900px;
+    max-width:1200px;
 
     margin:auto;
+
+    padding:120px 40px;
 }
 
-.hero-content::before{
+.hero-content small{
 
-    content:"🇵🇹";
+    display:block;
 
-    position:absolute;
+    color:#00ff66;
 
-    top:50%;
-    left:50%;
+    font-size:18px;
 
-    transform:
-    translate(-50%,-50%);
+    margin-bottom:10px;
 
-    font-size:250px;
-
-    opacity:.08;
-
-    pointer-events:none;
+    font-weight:600;
 }
 
 .hero-content h1{
 
-    position:relative;
-
     font-size:clamp(
-    42px,
+    50px,
     8vw,
-    90px
+    95px
     );
+
+    line-height:1;
 
     font-weight:800;
 
-    line-height:1.1;
-
     margin-bottom:20px;
+}
 
-    text-transform:uppercase;
+.hero-content h1 span{
+
+    display:block;
+
+    color:#ff3030;
+}
+
+.divider{
+
+    width:350px;
+    max-width:90%;
+
+    height:4px;
+
+    border-radius:20px;
+
+    margin:25px 0;
+
+    background:
+    linear-gradient(
+    90deg,
+    #00ff66,
+    #ff3030
+    );
 }
 
 .hero-content p{
 
-    position:relative;
+    max-width:650px;
 
-    color:#00e676;
-
-    font-size:clamp(
-    24px,
-    4vw,
-    38px
-    );
-
-    margin-bottom:15px;
-}
-
-.hero-content span{
-
-    position:relative;
-
-    display:block;
-
-    max-width:700px;
-
-    margin:auto;
-
-    font-size:18px;
+    font-size:20px;
 
     line-height:1.8;
 
@@ -316,8 +296,6 @@ body.dark{
 
     display:flex;
 
-    justify-content:center;
-
     gap:15px;
 
     flex-wrap:wrap;
@@ -327,49 +305,50 @@ body.dark{
 
     border:none;
 
-    background:#25D366;
+    background:#22c55e;
 
     color:white;
 
-    padding:18px 35px;
+    padding:18px 30px;
 
     border-radius:50px;
 
-    font-size:17px;
+    font-size:16px;
 
     font-weight:700;
 
     cursor:pointer;
 
     transition:.3s;
-
-    box-shadow:
-    0 10px 25px rgba(37,211,102,.4);
 }
 
 #joinMainBtn:hover{
 
     transform:
-    translateY(-5px);
+    translateY(-4px);
 }
 
 #darkModeBtn{
 
     border:none;
 
-    background:#111827;
+    background:
+    rgba(255,255,255,.12);
 
     color:white;
 
-    padding:18px 35px;
+    padding:18px 30px;
 
     border-radius:50px;
 
-    font-size:17px;
+    font-size:16px;
 
     font-weight:700;
 
     cursor:pointer;
+
+    backdrop-filter:
+    blur(10px);
 
     transition:.3s;
 }
@@ -377,7 +356,7 @@ body.dark{
 #darkModeBtn:hover{
 
     transform:
-    translateY(-5px);
+    translateY(-4px);
 }
 
 /* =================================
@@ -393,52 +372,60 @@ body.dark{
 
     text-align:center;
 
-    margin-bottom:40px;
+    font-size:42px;
 
-    font-size:38px;
+    margin-bottom:40px;
 }
 
 /* =================================
-   GLASS CARD
+   ABOUT CARD
 ================================= */
 
-.glass-card{
+.about-card{
 
-    max-width:1000px;
+    max-width:1100px;
 
     margin:auto;
 
+    display:flex;
+
+    align-items:center;
+
+    gap:30px;
+
     background:
-    rgba(255,255,255,.08);
+    rgba(255,255,255,.05);
+
+    border:
+    1px solid rgba(255,255,255,.08);
 
     backdrop-filter:
     blur(15px);
 
-    border:
-    1px solid rgba(255,255,255,.1);
-
     border-radius:25px;
 
     padding:35px;
-
-    text-align:center;
-
-    box-shadow:
-    0 10px 30px rgba(0,0,0,.3);
 }
 
-.glass-card h2{
+.about-logo{
 
-    margin-bottom:20px;
+    font-size:90px;
+
+    min-width:100px;
 }
 
-.glass-card p{
+.about-card h2{
+
+    margin-bottom:15px;
+}
+
+.about-card p{
 
     line-height:1.9;
 }
 
 /* =================================
-   ACHIEVEMENTS
+   PRESTASI
 ================================= */
 
 .achievement-grid{
@@ -450,7 +437,7 @@ body.dark{
     display:grid;
 
     grid-template-columns:
-    repeat(auto-fit,minmax(250px,1fr));
+    repeat(auto-fit,minmax(280px,1fr));
 
     gap:25px;
 }
@@ -458,23 +445,19 @@ body.dark{
 .achievement-card{
 
     background:
-    rgba(255,255,255,.08);
+    rgba(255,255,255,.05);
+
+    border:
+    1px solid rgba(255,255,255,.08);
 
     backdrop-filter:
-    blur(15px);
+    blur(10px);
 
     border-radius:20px;
 
     padding:35px;
 
-    text-align:center;
-
-    font-size:20px;
-
     transition:.3s;
-
-    box-shadow:
-    0 5px 15px rgba(0,0,0,.2);
 }
 
 .achievement-card:hover{
@@ -483,40 +466,49 @@ body.dark{
     translateY(-8px);
 }
 
+.achievement-card h3{
+
+    margin-bottom:10px;
+}
+
 /* =================================
    FOOTER
 ================================= */
 
 footer{
 
-    background:#050c16;
+    background:#04060c;
+
+    text-align:center;
 
     padding:50px 20px;
 
-    text-align:center;
+    border-top:
+    1px solid rgba(255,255,255,.08);
 }
 
-footer h3{
+.footer-credit{
 
-    margin-bottom:10px;
+    margin-top:15px;
+
+    opacity:.8;
 }
 
 /* =================================
-   DARK MODE SUPPORT
+   DARK MODE
 ================================= */
 
-body.dark .glass-card,
-body.dark .achievement-card{
+body.dark{
 
-    background:
-    rgba(255,255,255,.95);
+    background:#f4f4f4;
 
     color:#111827;
 }
 
-body.dark footer{
+body.dark .about-card,
+body.dark .achievement-card{
 
-    background:#e5e7eb;
+    background:white;
 
     color:#111827;
 }
@@ -528,34 +520,69 @@ body.dark .modal-content{
     color:#111827;
 }
 
+body.dark footer{
+
+    background:#e5e7eb;
+
+    color:#111827;
+}
+
 /* =================================
-   RESPONSIVE
+   MOBILE
 ================================= */
 
 @media(max-width:768px){
 
-    .hero-content::before{
+    .hero-content{
 
-        font-size:170px;
+        text-align:center;
+
+        padding:120px 20px;
+    }
+
+    .divider{
+
+        margin:25px auto;
+    }
+
+    .hero-content p{
+
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .hero-buttons{
+
+        justify-content:center;
+    }
+
+    .about-card{
+
+        flex-direction:column;
+
+        text-align:center;
     }
 
     .section-title{
 
-        font-size:30px;
+        font-size:32px;
     }
-
 }
+
+/* =================================
+   SMALL PHONE
+================================= */
 
 @media(max-width:480px){
 
     .hero-content h1{
 
-        font-size:40px;
+        font-size:42px;
     }
 
-    .hero-content span{
+    .hero-content p{
 
-        font-size:15px;
+        font-size:16px;
     }
 
     #joinMainBtn,
@@ -564,48 +591,37 @@ body.dark .modal-content{
         width:100%;
     }
 
-    .hero-content::before{
+    .about-logo{
 
-        font-size:120px;
+        font-size:70px;
     }
+   }
 
-}
-
-/* =================================
-   TOAST
-================================= */
 
 .toast{
 
     position:fixed;
 
-    right:-350px;
     top:20px;
+    right:-350px;
 
-    background:#25D366;
+    background:#22c55e;
 
     color:white;
 
-    padding:15px 25px;
+    padding:15px 20px;
 
     border-radius:12px;
 
-    z-index:99999;
+    z-index:999999;
 
     transition:.4s;
-
-    box-shadow:
-    0 10px 25px rgba(0,0,0,.3);
 }
 
 .toast.show{
 
     right:20px;
 }
-
-/* =================================
-   SCROLL ANIMATION
-================================= */
 
 .hidden{
 
@@ -623,4 +639,45 @@ body.dark .modal-content{
 
     transform:
     translateY(0);
-   }
+       }.toast{
+
+    position:fixed;
+
+    top:20px;
+    right:-350px;
+
+    background:#22c55e;
+
+    color:white;
+
+    padding:15px 20px;
+
+    border-radius:12px;
+
+    z-index:999999;
+
+    transition:.4s;
+}
+
+.toast.show{
+
+    right:20px;
+}
+
+.hidden{
+
+    opacity:0;
+
+    transform:
+    translateY(30px);
+
+    transition:.8s;
+}
+
+.visible{
+
+    opacity:1;
+
+    transform:
+    translateY(0);
+       }
