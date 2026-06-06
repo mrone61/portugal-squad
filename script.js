@@ -18,7 +18,7 @@ window.addEventListener("load", () => {
 });
 
 // =================================
-// MENU DROPDOWN
+// ELEMENTS
 // =================================
 
 const menuBtn =
@@ -30,6 +30,47 @@ const dropdownMenu =
     document.getElementById(
         "dropdownMenu"
     );
+
+const aboutBtn =
+    document.getElementById(
+        "aboutBtn"
+    );
+
+const joinBtn =
+    document.getElementById(
+        "joinBtn"
+    );
+
+const joinMainBtn =
+    document.getElementById(
+        "joinMainBtn"
+    );
+
+const darkModeBtn =
+    document.getElementById(
+        "darkModeBtn"
+    );
+
+const aboutModal =
+    document.getElementById(
+        "aboutModal"
+    );
+
+const closeModal =
+    document.getElementById(
+        "closeModal"
+    );
+
+// =================================
+// WHATSAPP GROUP
+// =================================
+
+const groupLink =
+"https://chat.whatsapp.com/KbWf8mrpRey1tIaZ6NJAh0?s=cl&p=a&ilr=4";
+
+// =================================
+// MENU TOGGLE
+// =================================
 
 menuBtn.addEventListener(
     "click",
@@ -48,11 +89,15 @@ menuBtn.addEventListener(
 
 document.addEventListener(
     "click",
-    (e) => {
+    (event) => {
 
         if (
-            !menuBtn.contains(e.target) &&
-            !dropdownMenu.contains(e.target)
+            !menuBtn.contains(
+                event.target
+            ) &&
+            !dropdownMenu.contains(
+                event.target
+            )
         ) {
 
             dropdownMenu.classList.remove(
@@ -67,21 +112,6 @@ document.addEventListener(
 // =================================
 // ABOUT MODAL
 // =================================
-
-const aboutBtn =
-    document.getElementById(
-        "aboutBtn"
-    );
-
-const aboutModal =
-    document.getElementById(
-        "aboutModal"
-    );
-
-const closeModal =
-    document.getElementById(
-        "closeModal"
-    );
 
 aboutBtn.addEventListener(
     "click",
@@ -109,10 +139,11 @@ closeModal.addEventListener(
 
 window.addEventListener(
     "click",
-    (e) => {
+    (event) => {
 
         if (
-            e.target === aboutModal
+            event.target ===
+            aboutModal
         ) {
 
             aboutModal.style.display =
@@ -124,21 +155,8 @@ window.addEventListener(
 );
 
 // =================================
-// WHATSAPP GROUP
+// JOIN GROUP
 // =================================
-
-const groupLink =
-    "https://chat.whatsapp.com/KbWf8mrpRey1tIaZ6NJAh0?s=cl&p=a&ilr=4";
-
-const joinBtn =
-    document.getElementById(
-        "joinBtn"
-    );
-
-const joinMainBtn =
-    document.getElementById(
-        "joinMainBtn"
-    );
 
 joinBtn.addEventListener(
     "click",
@@ -168,14 +186,13 @@ joinMainBtn.addEventListener(
 // DARK MODE
 // =================================
 
-const darkModeBtn =
-    document.getElementById(
-        "darkModeBtn"
+const savedTheme =
+    localStorage.getItem(
+        "theme"
     );
 
 if (
-    localStorage.getItem("theme")
-    === "dark"
+    savedTheme === "dark"
 ) {
 
     document.body.classList.add(
@@ -224,7 +241,7 @@ darkModeBtn.addEventListener(
                 "🌙 Dark Mode";
 
             showToast(
-                "Light Mode Aktif ☀️"
+                "Dark Mode Dimatikan ☀️"
             );
 
         }
@@ -246,7 +263,7 @@ function showToast(message) {
     toast.className =
         "toast";
 
-    toast.textContent =
+    toast.innerHTML =
         message;
 
     document.body.appendChild(
@@ -284,13 +301,13 @@ function showToast(message) {
 setTimeout(() => {
 
     showToast(
-        "Selamat Datang Portugal Fans 🇵🇹"
+        "🇵🇹 Selamat Datang Portugal Fans!"
     );
 
 }, 1800);
 
 // =================================
-// SMOOTH FADE-IN EFFECT
+// SCROLL ANIMATION
 // =================================
 
 const observer =
@@ -315,34 +332,38 @@ const observer =
 
         },
         {
-            threshold: 0.15
+            threshold:0.15
         }
     );
 
 document
-    .querySelectorAll(
-        ".glass-card, .achievement-card"
-    )
-    .forEach(
-        (el) => {
+.querySelectorAll(
+".about-card, .achievement-card"
+)
+.forEach(
+(element) => {
 
-            el.classList.add(
-                "hidden"
-            );
-
-            observer.observe(el);
-
-        }
+    element.classList.add(
+        "hidden"
     );
+
+    observer.observe(
+        element
+    );
+
+}
+);
 
 // =================================
 // CONSOLE MESSAGE
 // =================================
 
-console.log(`
-=====================================
+console.log(
+`
+========================================
 PORTUGAL WORLD CUP 2026
 FORÇA PORTUGAL 🇵🇹
-Responsive Landing Page
-=====================================
-`);
+Papua Cyber Community
+========================================
+`
+);
