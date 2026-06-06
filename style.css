@@ -208,10 +208,10 @@ body.dark{
 
     background:
     linear-gradient(
-    rgba(0,0,0,.72),
-    rgba(0,0,0,.72)
+        rgba(0,0,0,.65),
+        rgba(0,0,0,.65)
     ),
-    url('https://images.unsplash.com/photo-1517466787929-bc90951d0974?q=80&w=1920');
+    url('portugal.jpg');
 
     background-size:cover;
     background-position:center;
@@ -220,8 +220,8 @@ body.dark{
     display:flex;
     justify-content:center;
     align-items:center;
-
     text-align:center;
+
 }
 
 .hero-overlay{
