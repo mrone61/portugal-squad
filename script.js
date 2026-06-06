@@ -1,65 +1,41 @@
 // =================================
-// LOADER
-// =================================
-
-window.addEventListener("load", () => {
-
-    const loader =
-        document.getElementById("loader");
-
-    setTimeout(() => {
-
-        loader.classList.add(
-            "loader-hidden"
-        );
-
-    }, 1200);
-
-});
-
-// =================================
-// ELEMENTS
+// ELEMENT
 // =================================
 
 const menuBtn =
-    document.getElementById(
-        "menuBtn"
-    );
+document.getElementById(
+"menuBtn"
+);
 
 const dropdownMenu =
-    document.getElementById(
-        "dropdownMenu"
-    );
+document.getElementById(
+"dropdownMenu"
+);
 
 const aboutBtn =
-    document.getElementById(
-        "aboutBtn"
-    );
+document.getElementById(
+"aboutBtn"
+);
 
 const joinBtn =
-    document.getElementById(
-        "joinBtn"
-    );
+document.getElementById(
+"joinBtn"
+);
 
 const joinMainBtn =
-    document.getElementById(
-        "joinMainBtn"
-    );
-
-const darkModeBtn =
-    document.getElementById(
-        "darkModeBtn"
-    );
+document.getElementById(
+"joinMainBtn"
+);
 
 const aboutModal =
-    document.getElementById(
-        "aboutModal"
-    );
+document.getElementById(
+"aboutModal"
+);
 
 const closeModal =
-    document.getElementById(
-        "closeModal"
-    );
+document.getElementById(
+"closeModal"
+);
 
 // =================================
 // WHATSAPP GROUP
@@ -73,14 +49,14 @@ const groupLink =
 // =================================
 
 menuBtn.addEventListener(
-    "click",
-    () => {
+"click",
+() => {
 
-        dropdownMenu.classList.toggle(
-            "show"
-        );
+    dropdownMenu.classList.toggle(
+    "show"
+    );
 
-    }
+}
 );
 
 // =================================
@@ -88,70 +64,85 @@ menuBtn.addEventListener(
 // =================================
 
 document.addEventListener(
-    "click",
-    (event) => {
+"click",
+(event) => {
 
-        if (
-            !menuBtn.contains(
-                event.target
-            ) &&
-            !dropdownMenu.contains(
-                event.target
-            )
-        ) {
+    if(
 
-            dropdownMenu.classList.remove(
-                "show"
-            );
+        !menuBtn.contains(
+        event.target
+        )
 
-        }
+        &&
 
-    }
-);
+        !dropdownMenu.contains(
+        event.target
+        )
 
-// =================================
-// ABOUT MODAL
-// =================================
-
-aboutBtn.addEventListener(
-    "click",
-    () => {
-
-        aboutModal.style.display =
-            "flex";
+    ){
 
         dropdownMenu.classList.remove(
-            "show"
+        "show"
         );
 
     }
+
+}
 );
+
+// =================================
+// ABOUT MODAL OPEN
+// =================================
+
+aboutBtn.addEventListener(
+"click",
+() => {
+
+    aboutModal.style.display =
+    "flex";
+
+    dropdownMenu.classList.remove(
+    "show"
+    );
+
+}
+);
+
+// =================================
+// ABOUT MODAL CLOSE
+// =================================
 
 closeModal.addEventListener(
-    "click",
-    () => {
+"click",
+() => {
 
-        aboutModal.style.display =
-            "none";
+    aboutModal.style.display =
+    "none";
 
-    }
+}
 );
 
+// =================================
+// CLOSE MODAL OUTSIDE
+// =================================
+
 window.addEventListener(
-    "click",
-    (event) => {
+"click",
+(event) => {
 
-        if (
-            event.target ===
-            aboutModal
-        ) {
+    if(
 
-            aboutModal.style.display =
-                "none";
+        event.target ===
+        aboutModal
 
-        }
+    ){
+
+        aboutModal.style.display =
+        "none";
 
     }
+
+}
 );
 
 // =================================
@@ -159,182 +150,60 @@ window.addEventListener(
 // =================================
 
 joinBtn.addEventListener(
-    "click",
-    () => {
+"click",
+() => {
 
-        window.open(
-            groupLink,
-            "_blank"
-        );
+    window.open(
+    groupLink,
+    "_blank"
+    );
 
-    }
+}
 );
 
 joinMainBtn.addEventListener(
-    "click",
-    () => {
+"click",
+() => {
 
-        window.open(
-            groupLink,
-            "_blank"
-        );
-
-    }
-);
-
-// =================================
-// DARK MODE
-// =================================
-
-const savedTheme =
-    localStorage.getItem(
-        "theme"
+    window.open(
+    groupLink,
+    "_blank"
     );
-
-if (
-    savedTheme === "dark"
-) {
-
-    document.body.classList.add(
-        "dark"
-    );
-
-    darkModeBtn.innerHTML =
-        "☀️ Light Mode";
 
 }
-
-darkModeBtn.addEventListener(
-    "click",
-    () => {
-
-        document.body.classList.toggle(
-            "dark"
-        );
-
-        if (
-            document.body.classList.contains(
-                "dark"
-            )
-        ) {
-
-            localStorage.setItem(
-                "theme",
-                "dark"
-            );
-
-            darkModeBtn.innerHTML =
-                "☀️ Light Mode";
-
-            showToast(
-                "Dark Mode Aktif 🌙"
-            );
-
-        } else {
-
-            localStorage.setItem(
-                "theme",
-                "light"
-            );
-
-            darkModeBtn.innerHTML =
-                "🌙 Dark Mode";
-
-            showToast(
-                "Dark Mode Dimatikan ☀️"
-            );
-
-        }
-
-    }
 );
-
-// =================================
-// TOAST NOTIFICATION
-// =================================
-
-function showToast(message) {
-
-    const toast =
-        document.createElement(
-            "div"
-        );
-
-    toast.className =
-        "toast";
-
-    toast.innerHTML =
-        message;
-
-    document.body.appendChild(
-        toast
-    );
-
-    setTimeout(() => {
-
-        toast.classList.add(
-            "show"
-        );
-
-    }, 100);
-
-    setTimeout(() => {
-
-        toast.classList.remove(
-            "show"
-        );
-
-        setTimeout(() => {
-
-            toast.remove();
-
-        }, 400);
-
-    }, 2500);
-
-}
-
-// =================================
-// WELCOME MESSAGE
-// =================================
-
-setTimeout(() => {
-
-    showToast(
-        "🇵🇹 Selamat Datang Portugal Fans!"
-    );
-
-}, 1800);
 
 // =================================
 // SCROLL ANIMATION
 // =================================
 
 const observer =
-    new IntersectionObserver(
-        (entries) => {
+new IntersectionObserver(
 
-            entries.forEach(
-                (entry) => {
+(entries) => {
 
-                    if (
-                        entry.isIntersecting
-                    ) {
+    entries.forEach(
+    (entry) => {
 
-                        entry.target.classList.add(
-                            "visible"
-                        );
+        if(
+            entry.isIntersecting
+        ){
 
-                    }
-
-                }
+            entry.target.classList.add(
+            "visible"
             );
 
-        },
-        {
-            threshold:0.15
         }
-    );
+
+    });
+
+},
+
+{
+    threshold:0.15
+}
+
+);
 
 document
 .querySelectorAll(
@@ -344,11 +213,11 @@ document
 (element) => {
 
     element.classList.add(
-        "hidden"
+    "hidden"
     );
 
     observer.observe(
-        element
+    element
     );
 
 }
@@ -360,10 +229,10 @@ document
 
 console.log(
 `
-========================================
+==================================
 PORTUGAL WORLD CUP 2026
 FORÇA PORTUGAL 🇵🇹
 Papua Cyber Community
-========================================
+==================================
 `
 );
