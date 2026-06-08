@@ -17,9 +17,9 @@ document.getElementById(
 "aboutBtn"
 );
 
-const joinBtn =
+const contactBtn =
 document.getElementById(
-"joinBtn"
+"contactBtn"
 );
 
 const joinMainBtn =
@@ -149,18 +149,18 @@ window.addEventListener(
 // JOIN GROUP
 // =================================
 
-joinBtn.addEventListener(
+
+contactBtn.addEventListener(
 "click",
 () => {
 
     window.open(
-    groupLink,
+    "https://wa.me/6282239959100",
     "_blank"
     );
 
 }
 );
-
 joinMainBtn.addEventListener(
 "click",
 () => {
