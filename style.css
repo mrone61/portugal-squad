@@ -1,4 +1,3 @@
-/* ================================= RESET ================================= */
 *{
     margin:0;
     padding:0;
@@ -14,7 +13,7 @@ body{
     overflow-x:hidden;
 }
 
-/* ================================= MENU ================================= */
+/* MENU */
 .menu-container{
     position:fixed;
     top:20px;
@@ -63,7 +62,7 @@ body{
     background:#1f2937;
 }
 
-/* ================================= MODAL ================================= */
+/* MODAL */
 .modal{
     display:none;
     position:fixed;
@@ -101,13 +100,12 @@ body{
     opacity:.9;
 }
 
-/* ================================= HERO ================================= */
+/* HERO */
 .hero{
     min-height:100vh;
     background:linear-gradient(rgba(0,0,0,.70),rgba(0,0,0,.70)),url('portugal.jpg');
     background-size:cover;
     background-position:center;
-    background-repeat:no-repeat;
     display:flex;
     align-items:center;
 }
@@ -148,7 +146,7 @@ body{
     margin-bottom:35px;
 }
 
-/* ================================= BUTTON ================================= */
+/* BUTTON */
 .hero-buttons{
     display:flex;
     flex-wrap:wrap;
@@ -186,7 +184,7 @@ body{
     transform:translateY(-4px);
 }
 
-/* ================================= SECTION ================================= */
+/* SECTION */
 .section{
     padding:80px 20px;
 }
@@ -196,7 +194,7 @@ body{
     margin-bottom:50px;
 }
 
-/* ================================= MODERN MATCH CARD ================================= */
+/* MATCH CARD */
 .match-card{
     max-width:800px;
     margin:0 auto 35px;
@@ -218,7 +216,6 @@ body{
     font-size:14px;
     font-weight:600;
     margin-bottom:10px;
-    letter-spacing:1px;
 }
 .match-date{
     font-size:18px;
@@ -244,9 +241,6 @@ body{
     font-size:28px;
     font-weight:700;
 }
-.match-vs{
-    padding:0 20px;
-}
 .match-vs span{
     display:block;
     font-size:32px;
@@ -257,7 +251,6 @@ body{
 .match-vs small{
     font-size:12px;
     opacity:.7;
-    line-height:1.5;
 }
 .match-live-btn{
     width:100%;
@@ -276,19 +269,9 @@ body{
 .match-live-btn:hover{
     transform:translateY(-4px);
     background:#cc2626;
-    box-shadow:0 15px 40px rgba(255,48,48,.6);
-}
-.match-live-btn:disabled{
-    background:#555;
-    cursor:not-allowed;
-    box-shadow:none;
-}
-.match-live-btn:disabled:hover{
-    transform:none;
-    background:#555;
 }
 
-/* ================================= ABOUT CARD ================================= */
+/* ABOUT */
 .about-card{
     max-width:1100px;
     margin:auto;
@@ -312,7 +295,7 @@ body{
     line-height:1.9;
 }
 
-/* ================================= ACHIEVEMENT ================================= */
+/* ACHIEVEMENT */
 .achievement-grid{
     max-width:1200px;
     margin:auto;
@@ -336,7 +319,7 @@ body{
     margin-bottom:10px;
 }
 
-/* ================================= FOOTER ================================= */
+/* FOOTER */
 footer{
     background:#04060c;
     text-align:center;
@@ -352,7 +335,7 @@ footer h3{
     font-size:14px;
 }
 
-/* ================================= SCROLL ANIMATION ================================= */
+/* ANIMATION */
 .hidden{
     opacity:0;
     transform:translateY(30px);
@@ -363,53 +346,50 @@ footer h3{
     transform:translateY(0);
 }
 
-/* ================================= TABLET ================================= */
+/* MOBILE */
 @media(max-width:768px){
-   .hero-content{
+  .hero-content{
         text-align:center;
         padding:120px 20px;
     }
-   .divider{
+  .divider{
         margin:25px auto;
     }
-   .hero-content p{
-        margin-left:auto;
-        margin-right:auto;
+  .hero-content p{
+        margin:0 auto 35px;
     }
-   .hero-buttons{
+  .hero-buttons{
         justify-content:center;
     }
-   .about-card{
+  .about-card{
         flex-direction:column;
         text-align:center;
     }
-   .section-title{
+  .section-title{
         font-size:32px;
     }
-   .match-teams{
+  .match-teams{
         flex-direction:column;
         gap:25px;
     }
-   .team-flag{
+  .team-flag{
         font-size:60px;
     }
-   .team h3{
+  .team h3{
         font-size:22px;
     }
-   .match-vs span{
+  .match-vs span{
         font-size:24px;
     }
 }
-
-/* ================================= MOBILE ================================= */
 @media(max-width:480px){
-   .hero-content h1{
+  .hero-content h1{
         font-size:42px;
     }
-   .hero-content p{
+  .hero-content p{
         font-size:16px;
     }
-   .about-logo{
+  .about-logo{
         font-size:70px;
     }
     #joinMainBtn,.btn-match{
@@ -417,14 +397,10 @@ footer h3{
         font-size:14px;
         padding:16px 20px;
     }
-   .match-card{
+  .match-card{
         padding:30px 20px;
     }
-   .match-date{
+  .match-date{
         font-size:16px;
     }
-   .menu-container{
-        top:15px;
-        left:15px;
     }
-}
