@@ -11,27 +11,33 @@ document.addEventListener('DOMContentLoaded', function() {
     const groupLink = "https://chat.whatsapp.com/KbWf8mrpRey1tIaZ6NJAh0?s=cl&p=a&ilr=4";
 
     // Toggle menu
-    menuBtn.onclick = function(e) {
-        e.stopPropagation();
-        dropdownMenu.classList.toggle("show");
-    };
+    if(menuBtn) {
+        menuBtn.onclick = function(e) {
+            e.stopPropagation();
+            dropdownMenu.classList.toggle("show");
+        };
+    }
 
     // Close menu kalau klik di luar
     document.onclick = function(e) {
-        if(!menuBtn.contains(e.target) &&!dropdownMenu.contains(e.target)) {
+        if(menuBtn &&!menuBtn.contains(e.target) &&!dropdownMenu.contains(e.target)) {
             dropdownMenu.classList.remove("show");
         }
     };
 
     // About modal
-    aboutBtn.onclick = function() {
-        aboutModal.style.display = "flex";
-        dropdownMenu.classList.remove("show");
-    };
+    if(aboutBtn) {
+        aboutBtn.onclick = function() {
+            aboutModal.style.display = "flex";
+            dropdownMenu.classList.remove("show");
+        };
+    }
 
-    closeModal.onclick = function() {
-        aboutModal.style.display = "none";
-    };
+    if(closeModal) {
+        closeModal.onclick = function() {
+            aboutModal.style.display = "none";
+        };
+    }
 
     window.onclick = function(e) {
         if(e.target === aboutModal) {
@@ -39,22 +45,26 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 
-    // JADWAL LENGKAP - SCROLL KE SECTION
-    scheduleBtn.onclick = function(e) {
-        e.preventDefault();
-        document.getElementById("full-schedule").scrollIntoView({behavior:"smooth", block:"start"});
-        dropdownMenu.classList.remove("show");
-        console.log("Scroll ke Jadwal Lengkap");
-    };
+    // JADWAL LENGKAP - PINDAH KE HALAMAN BARU
+    if(scheduleBtn) {
+        scheduleBtn.onclick = function(e) {
+            e.preventDefault();
+            window.location.href = "jadwal.html";
+        };
+    }
 
     // Contact + Join
-    contactBtn.onclick = function() {
-        window.open("https://wa.me/6282239959100", "_blank");
-    };
+    if(contactBtn) {
+        contactBtn.onclick = function() {
+            window.open("https://wa.me/6282239959100", "_blank");
+        };
+    }
 
-    joinMainBtn.onclick = function() {
-        window.open(groupLink, "_blank");
-    };
+    if(joinMainBtn) {
+        joinMainBtn.onclick = function() {
+            window.open(groupLink, "_blank");
+        };
+    }
 
     // Tombol Live Match
     document.querySelectorAll(".match-live-btn").forEach(btn => {
