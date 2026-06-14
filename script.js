@@ -2,15 +2,15 @@
 const menuBtn = document.getElementById("menuBtn");
 const dropdownMenu = document.getElementById("dropdownMenu");
 const aboutBtn = document.getElementById("aboutBtn");
+const scheduleBtn = document.getElementById("scheduleBtn");
 const contactBtn = document.getElementById("contactBtn");
 const joinMainBtn = document.getElementById("joinMainBtn");
-const matchBtn = document.getElementById("matchBtn");
 const aboutModal = document.getElementById("aboutModal");
 const closeModal = document.getElementById("closeModal");
+const matchBtns = document.querySelectorAll(".match-live-btn");
 
 // ================================= GROUP LINKS =================================
 const groupLink = "https://chat.whatsapp.com/KbWf8mrpRey1tIaZ6NJAh0?s=cl&p=a&ilr=4";
-const matchLink = "https://ministrytodaymag.com/match/l5ergph4877er8k/";
 
 // ================================= MENU TOGGLE =================================
 menuBtn.addEventListener("click", () => {
@@ -27,6 +27,12 @@ document.addEventListener("click", (event) => {
 // ================================= ABOUT MODAL OPEN =================================
 aboutBtn.addEventListener("click", () => {
     aboutModal.style.display = "flex";
+    dropdownMenu.classList.remove("show");
+});
+
+// ================================= SCROLL TO SCHEDULE =================================
+scheduleBtn.addEventListener("click", () => {
+    document.getElementById("matches").scrollIntoView({behavior:"smooth"});
     dropdownMenu.classList.remove("show");
 });
 
@@ -49,15 +55,29 @@ contactBtn.addEventListener("click", () => {
 joinMainBtn.addEventListener("click", () => {
     window.open(groupLink, "_blank");
 });
-matchBtn.addEventListener("click", () => {
-    alert(`⚽ PORTUGAL 🇵🇹 VS DR CONGO 🇨🇩
-📅 Kamis, 18 Juni 2026
-⏰ 02:00 WIT / 01:00 WITA / 00:00 WIB
+
+// ================================= MATCH BUTTONS =================================
+matchBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+        const link = btn.getAttribute("data-link");
+        const card = btn.closest(".match-card");
+        const date = card.querySelector(".match-date").textContent;
+        const teams = card.querySelector(".team h3:nth-of-type(1)").textContent + " vs " + card.querySelector(".team h3:nth-of-type(2)").textContent;
+        
+        if(link && link !== "#"){
+            alert(`⚽ ${teams}
+📅 ${date}
 🏆 FIFA World Cup 2026 - Group K
-📍 Stadion Akron, Guadalajara, Mexico
 
 Link Match dibuka di tab baru!`);
-    window.open(matchLink, "_blank");
+            window.open(link, "_blank");
+        } else {
+            alert(`⚽ ${teams}
+📅 ${date}
+
+Link live match belum tersedia. Nanti gue update bro!`);
+        }
+    });
 });
 
 // ================================= SCROLL ANIMATION =================================
@@ -69,7 +89,7 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, {threshold:0.15});
 
-document.querySelectorAll(".about-card,.achievement-card").forEach((element) => {
+document.querySelectorAll(".about-card,.achievement-card,.match-card").forEach((element) => {
     element.classList.add("hidden");
     observer.observe(element);
 });
@@ -79,6 +99,7 @@ console.log(`
 
 PORTUGAL WORLD CUP 2026
 FORÇA PORTUGAL 🇵🇹
+3 Match Group K Ready
 Papua Cyber Community
 
 `);
