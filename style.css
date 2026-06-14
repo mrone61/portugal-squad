@@ -13,7 +13,7 @@ body{
     overflow-x:hidden;
 }
 
-/* MENU - TRANSPARANT 100% */
+/* ================================= MENU - TRANSPARANT 100% ================================= */
 .menu-container{
     position:fixed;
     top:20px;
@@ -64,7 +64,7 @@ body{
     background:#1f2937;
 }
 
-/* MODAL */
+/* ================================= MODAL ================================= */
 .modal{
     display:none;
     position:fixed;
@@ -102,7 +102,7 @@ body{
     opacity:.9;
 }
 
-/* HERO */
+/* ================================= HERO ================================= */
 .hero{
     min-height:100vh;
     background:linear-gradient(rgba(0,0,0,.70),rgba(0,0,0,.70)),url('portugal.jpg');
@@ -148,7 +148,7 @@ body{
     margin-bottom:35px;
 }
 
-/* BUTTON */
+/* ================================= BUTTON ================================= */
 .hero-buttons{
     display:flex;
     flex-wrap:wrap;
@@ -170,7 +170,7 @@ body{
     transform:translateY(-4px);
 }
 
-/* SECTION */
+/* ================================= SECTION ================================= */
 .section{
     padding:80px 20px;
 }
@@ -180,7 +180,7 @@ body{
     margin-bottom:50px;
 }
 
-/* SCHEDULE HEADER */
+/* ================================= SCHEDULE HEADER HALAMAN JADWAL ================================= */
 .schedule-header{
     padding:100px 20px 50px;
     text-align:center;
@@ -195,7 +195,7 @@ body{
     opacity:.8;
 }
 
-/* BACK BUTTON */
+/* ================================= BACK BUTTON ================================= */
 .back-btn{
     display:inline-block;
     text-decoration:none;
@@ -214,7 +214,7 @@ body{
     transform:translateY(-3px);
 }
 
-/* MATCH CARD */
+/* ================================= MATCH CARD BESAR HOME ================================= */
 .match-card{
     max-width:800px;
     margin:0 auto 35px;
@@ -291,7 +291,73 @@ body{
     background:#cc2626;
 }
 
-/* ABOUT */
+/* ================================= MATCH CARD KECIL RATA KIRI HALAMAN JADWAL ================================= */
+.match-card-small{
+    max-width:450px;
+    margin:0 auto 25px;
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.1);
+    backdrop-filter:blur(15px);
+    border-radius:20px;
+    padding:25px 20px;
+    text-align:left;
+    transition:.3s;
+}
+.match-card-small:hover{
+    transform:translateY(-5px);
+    border-color:rgba(255,48,48,.3);
+}
+.match-league-small{
+    color:#00ff66;
+    font-size:12px;
+    font-weight:600;
+    margin-bottom:8px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+.match-date-small{
+    font-size:14px;
+    font-weight:600;
+    margin-bottom:15px;
+    opacity:.8;
+}
+.match-teams-small{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:10px;
+}
+.flag-small{
+    font-size:32px;
+}
+.vs-small{
+    font-size:16px;
+    font-weight:700;
+    color:#ff3030;
+}
+.venue-small{
+    font-size:12px;
+    opacity:.6;
+    margin-bottom:15px;
+}
+.match-live-btn-small{
+    width:100%;
+    border:none;
+    background:#ff3030;
+    color:white;
+    padding:12px 20px;
+    border-radius:12px;
+    font-size:14px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+.match-live-btn-small:hover{
+    background:#cc2626;
+    transform:translateY(-2px);
+}
+
+/* ================================= ABOUT CARD ================================= */
 .about-card{
     max-width:1100px;
     margin:auto;
@@ -315,7 +381,7 @@ body{
     line-height:1.9;
 }
 
-/* ACHIEVEMENT */
+/* ================================= ACHIEVEMENT ================================= */
 .achievement-grid{
     max-width:1200px;
     margin:auto;
@@ -339,7 +405,7 @@ body{
     margin-bottom:10px;
 }
 
-/* FOOTER */
+/* ================================= FOOTER ================================= */
 footer{
     background:#04060c;
     text-align:center;
@@ -355,7 +421,7 @@ footer h3{
     font-size:14px;
 }
 
-/* ANIMATION */
+/* ================================= SCROLL ANIMATION ================================= */
 .hidden{
     opacity:0;
     transform:translateY(30px);
@@ -366,7 +432,7 @@ footer h3{
     transform:translateY(0);
 }
 
-/* MOBILE */
+/* ================================= TABLET ================================= */
 @media(max-width:768px){
 .hero-content{
         text-align:center;
@@ -403,5 +469,36 @@ footer h3{
     }
 .match-vs span{
         font-size:24px;
+    }
+}
+
+/* ================================= MOBILE ================================= */
+@media(max-width:480px){
+.hero-content h1{
+        font-size:42px;
+    }
+.hero-content p{
+        font-size:16px;
+    }
+.about-logo{
+        font-size:70px;
+    }
+#joinMainBtn{
+        width:100%;
+        font-size:14px;
+        padding:16px 20px;
+    }
+.match-card{
+        padding:30px 20px;
+    }
+.match-date{
+        font-size:16px;
+    }
+.match-card-small{
+        max-width:100%;
+        padding:20px 15px;
+    }
+.flag-small{
+        font-size:28px;
     }
     }
