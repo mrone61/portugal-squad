@@ -12,63 +12,64 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Toggle menu
     if(menuBtn) {
-        menuBtn.onclick = function(e) {
+        menuBtn.addEventListener("click", function(e) {
             e.stopPropagation();
             dropdownMenu.classList.toggle("show");
-        };
+        });
     }
 
     // Close menu kalau klik di luar
-    document.onclick = function(e) {
-        if(menuBtn &&!menuBtn.contains(e.target) &&!dropdownMenu.contains(e.target)) {
+    document.addEventListener("click", function(e) {
+        if(menuBtn &&!menuBtn.contains(e.target) && dropdownMenu &&!dropdownMenu.contains(e.target)) {
             dropdownMenu.classList.remove("show");
         }
-    };
+    });
 
     // About modal
     if(aboutBtn) {
-        aboutBtn.onclick = function() {
+        aboutBtn.addEventListener("click", function() {
             aboutModal.style.display = "flex";
             dropdownMenu.classList.remove("show");
-        };
+        });
     }
 
     if(closeModal) {
-        closeModal.onclick = function() {
+        closeModal.addEventListener("click", function() {
             aboutModal.style.display = "none";
-        };
+        });
     }
 
-    window.onclick = function(e) {
+    window.addEventListener("click", function(e) {
         if(e.target === aboutModal) {
             aboutModal.style.display = "none";
         }
-    };
+    });
 
-    // JADWAL LENGKAP - PINDAH KE HALAMAN BARU
+    // JADWAL LENGKAP - REDIRECT KE HALAMAN BARU
     if(scheduleBtn) {
-        scheduleBtn.onclick = function(e) {
+        scheduleBtn.addEventListener("click", function(e) {
             e.preventDefault();
+            dropdownMenu.classList.remove("show");
             window.location.href = "jadwal.html";
-        };
+        });
     }
 
     // Contact + Join
     if(contactBtn) {
-        contactBtn.onclick = function() {
+        contactBtn.addEventListener("click", function() {
             window.open("https://wa.me/6282239959100", "_blank");
-        };
+        });
     }
 
     if(joinMainBtn) {
-        joinMainBtn.onclick = function() {
+        joinMainBtn.addEventListener("click", function() {
             window.open(groupLink, "_blank");
-        };
+        });
     }
 
     // Tombol Live Match
     document.querySelectorAll(".match-live-btn").forEach(btn => {
-        btn.onclick = function(e) {
+        btn.addEventListener("click", function(e) {
             e.preventDefault();
             const link = this.getAttribute("data-link");
             const card = this.closest(".match-card");
@@ -82,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function() {
             } else {
                 alert(`⚽ ${team1} vs ${team2}\n📅 ${date}\n\nLink live match belum tersedia bro!`);
             }
-        };
+        });
     });
 
     // Scroll animation
