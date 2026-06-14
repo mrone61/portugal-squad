@@ -198,6 +198,40 @@ body{
     margin-bottom:50px;
 }
 
+/* SCHEDULE HEADER HALAMAN JADWAL */
+.schedule-header{
+    padding:100px 20px 50px;
+    text-align:center;
+    background:linear-gradient(135deg,rgba(255,48,48,.2),rgba(0,255,102,.1));
+}
+.schedule-header h1{
+    font-size:48px;
+    margin:20px 0 10px;
+}
+.schedule-header p{
+    font-size:18px;
+    opacity:.8;
+}
+
+/* BACK BUTTON */
+.back-btn{
+    display:inline-block;
+    text-decoration:none;
+    background:#1f2937;
+    color:white;
+    border:2px solid #ff3030;
+    padding:14px 28px;
+    border-radius:50px;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+.back-btn:hover{
+    background:#ff3030;
+    transform:translateY(-3px);
+}
+
 /* MATCH CARD */
 .match-card{
     max-width:800px;
@@ -352,37 +386,40 @@ footer h3{
 
 /* MOBILE */
 @media(max-width:768px){
- .hero-content{
+.hero-content{
         text-align:center;
         padding:120px 20px;
     }
- .divider{
+.divider{
         margin:25px auto;
     }
- .hero-content p{
+.hero-content p{
         margin:0 auto 35px;
     }
- .hero-buttons{
+.hero-buttons{
         justify-content:center;
     }
- .about-card{
+.about-card{
         flex-direction:column;
         text-align:center;
     }
- .section-title{
+.section-title{
         font-size:32px;
     }
- .match-teams{
+.schedule-header h1{
+        font-size:36px;
+    }
+.match-teams{
         flex-direction:column;
         gap:25px;
     }
- .team-flag{
+.team-flag{
         font-size:60px;
     }
- .team h3{
+.team h3{
         font-size:22px;
     }
- .match-vs span{
+.match-vs span{
         font-size:24px;
     }
-    }
+                                                               }
