@@ -13,7 +13,7 @@ body{
     overflow-x:hidden;
 }
 
-/* MENU */
+/* MENU - TRANSPARANT 100% */
 .menu-container{
     position:fixed;
     top:20px;
@@ -24,17 +24,15 @@ body{
     width:55px;
     height:55px;
     border:none;
-    border-radius:15px;
+    background:transparent;
     cursor:pointer;
     font-size:28px;
     color:white;
-    background:rgba(17,24,39,.8);
-    backdrop-filter:blur(10px);
     transition:.3s;
 }
 #menuBtn:hover{
-    transform:scale(1.05);
-    background:rgba(31,41,55,.9);
+    transform:scale(1.1);
+    color:#00ff66;
 }
 #dropdownMenu{
     position:absolute;
@@ -171,22 +169,6 @@ body{
 #joinMainBtn:hover{
     transform:translateY(-4px);
 }
-.btn-match{
-    text-decoration:none;
-    background:transparent;
-    color:white;
-    border:2px solid #ff3030;
-    padding:16px 30px;
-    border-radius:50px;
-    font-size:16px;
-    font-weight:700;
-    cursor:pointer;
-    transition:.3s;
-}
-.btn-match:hover{
-    background:#ff3030;
-    transform:translateY(-4px);
-}
 
 /* SECTION */
 .section{
@@ -198,7 +180,7 @@ body{
     margin-bottom:50px;
 }
 
-/* SCHEDULE HEADER HALAMAN JADWAL */
+/* SCHEDULE HEADER */
 .schedule-header{
     padding:100px 20px 50px;
     text-align:center;
@@ -422,4 +404,4 @@ footer h3{
 .match-vs span{
         font-size:24px;
     }
-                                                               }
+    }
