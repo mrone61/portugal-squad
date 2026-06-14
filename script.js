@@ -1,4 +1,3 @@
-// ================================= ELEMENT =================================
 const menuBtn = document.getElementById("menuBtn");
 const dropdownMenu = document.getElementById("dropdownMenu");
 const aboutBtn = document.getElementById("aboutBtn");
@@ -7,48 +6,42 @@ const contactBtn = document.getElementById("contactBtn");
 const joinMainBtn = document.getElementById("joinMainBtn");
 const aboutModal = document.getElementById("aboutModal");
 const closeModal = document.getElementById("closeModal");
-const matchBtns = document.querySelectorAll(".match-live-btn");
 
-// ================================= GROUP LINKS =================================
 const groupLink = "https://chat.whatsapp.com/KbWf8mrpRey1tIaZ6NJAh0?s=cl&p=a&ilr=4";
 
-// ================================= MENU TOGGLE =================================
+// Menu toggle
 menuBtn.addEventListener("click", () => {
     dropdownMenu.classList.toggle("show");
 });
 
-// ================================= CLOSE MENU OUTSIDE =================================
-document.addEventListener("click", (event) => {
-    if(!menuBtn.contains(event.target) &&!dropdownMenu.contains(event.target)){
+// Close menu outside
+document.addEventListener("click", (e) => {
+    if(!menuBtn.contains(e.target) &&!dropdownMenu.contains(e.target)){
         dropdownMenu.classList.remove("show");
     }
 });
 
-// ================================= ABOUT MODAL OPEN =================================
+// About modal
 aboutBtn.addEventListener("click", () => {
     aboutModal.style.display = "flex";
     dropdownMenu.classList.remove("show");
 });
-
-// ================================= SCROLL TO SCHEDULE =================================
-scheduleBtn.addEventListener("click", () => {
-    document.getElementById("matches").scrollIntoView({behavior:"smooth"});
-    dropdownMenu.classList.remove("show");
-});
-
-// ================================= ABOUT MODAL CLOSE =================================
 closeModal.addEventListener("click", () => {
     aboutModal.style.display = "none";
 });
-
-// ================================= CLOSE MODAL OUTSIDE =================================
-window.addEventListener("click", (event) => {
-    if(event.target === aboutModal){
+window.addEventListener("click", (e) => {
+    if(e.target === aboutModal){
         aboutModal.style.display = "none";
     }
 });
 
-// ================================= JOIN GROUP =================================
+// Scroll ke Jadwal Lengkap
+scheduleBtn.addEventListener("click", () => {
+    document.getElementById("full-schedule").scrollIntoView({behavior:"smooth"});
+    dropdownMenu.classList.remove("show");
+});
+
+// Contact + Join
 contactBtn.addEventListener("click", () => {
     window.open("https://wa.me/6282239959100", "_blank");
 });
@@ -56,31 +49,28 @@ joinMainBtn.addEventListener("click", () => {
     window.open(groupLink, "_blank");
 });
 
-// ================================= MATCH BUTTONS =================================
-matchBtns.forEach(btn => {
-    btn.addEventListener("click", () => {
-        const link = btn.getAttribute("data-link");
-        const card = btn.closest(".match-card");
+// Tombol Live Match - GUE FIX INI
+document.querySelectorAll(".match-live-btn").forEach(btn => {
+    btn.addEventListener("click", function(e){
+        e.preventDefault();
+        const link = this.getAttribute("data-link");
+        const card = this.closest(".match-card");
         const date = card.querySelector(".match-date").textContent;
-        const teams = card.querySelector(".team h3:nth-of-type(1)").textContent + " vs " + card.querySelector(".team h3:nth-of-type(2)").textContent;
-        
-        if(link && link !== "#"){
-            alert(`⚽ ${teams}
-📅 ${date}
-🏆 FIFA World Cup 2026 - Group K
+        const team1 = card.querySelectorAll(".team h3")[0].textContent;
+        const team2 = card.querySelectorAll(".team h3")[1].textContent;
 
-Link Match dibuka di tab baru!`);
+        console.log("Tombol diklik:", team1, "vs", team2, "Link:", link);
+
+        if(link && link!== "#" && link!== ""){
+            alert(`⚽ ${team1} vs ${team2}\n📅 ${date}\n🏆 FIFA World Cup 2026\nBuka link match sekarang!`);
             window.open(link, "_blank");
         } else {
-            alert(`⚽ ${teams}
-📅 ${date}
-
-Link live match belum tersedia. Nanti gue update bro!`);
+            alert(`⚽ ${team1} vs ${team2}\n📅 ${date}\n\nLink live match belum tersedia bro. Nanti gue update!`);
         }
     });
 });
 
-// ================================= SCROLL ANIMATION =================================
+// Scroll animation
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if(entry.isIntersecting){
@@ -89,17 +79,7 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, {threshold:0.15});
 
-document.querySelectorAll(".about-card,.achievement-card,.match-card").forEach((element) => {
-    element.classList.add("hidden");
-    observer.observe(element);
+document.querySelectorAll(".about-card,.achievement-card,.match-card").forEach((el) => {
+    el.classList.add("hidden");
+    observer.observe(el);
 });
-
-// ================================= CONSOLE MESSAGE =================================
-console.log(`
-
-PORTUGAL WORLD CUP 2026
-FORÇA PORTUGAL 🇵🇹
-3 Match Group K Ready
-Papua Cyber Community
-
-`);
