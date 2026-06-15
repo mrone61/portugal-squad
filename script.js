@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Tombol Live Match
+    // Tombol Live Match VERSI BESAR - buat jadwal.html lama
     document.querySelectorAll(".match-live-btn").forEach(btn => {
         btn.addEventListener("click", function(e) {
             e.preventDefault();
@@ -86,6 +86,24 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // Tombol Live Match VERSI KECIL - buat index.html & jadwal.html baru
+    document.querySelectorAll(".match-live-btn-small").forEach(btn => {
+        btn.addEventListener("click", function(e) {
+            e.preventDefault();
+            const link = this.getAttribute("data-link");
+            const card = this.closest(".match-card-small");
+            const date = card.querySelector(".match-date-small").textContent;
+            const teams = card.querySelector(".match-teams-small").textContent;
+
+            if(link && link!== "#") {
+                alert(`⚽ ${teams}\n📅 ${date}\nBuka link match!`);
+                window.open(link, "_blank");
+            } else {
+                alert(`⚽ ${teams}\n📅 ${date}\n\nLink live match belum tersedia bro!`);
+            }
+        });
+    });
+
     // Scroll animation
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
@@ -95,7 +113,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, {threshold:0.15});
 
-    document.querySelectorAll(".about-card,.achievement-card,.match-card").forEach((el) => {
+    document.querySelectorAll(".about-card,.achievement-card,.match-card,.match-card-small").forEach((el) => {
         el.classList.add("hidden");
         observer.observe(el);
     });
