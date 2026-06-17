@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 alert(`⚽ ${team1} vs ${team2}\n📅 ${date}\nBuka link match!`);
                 window.open(link, "_blank");
             } else {
-                alert(`⚽ ${team1} vs ${team2}\n📅 ${date}\n\nLink live match belum tersedia bro!`);
+                alert(`⚽ ${team1} vs ${team2}\n📅 ${date}\n\nPertandingan Telah Berakhir bro!`);
             }
         });
     });
