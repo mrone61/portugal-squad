@@ -357,6 +357,16 @@ body{
     transform:translateY(-2px);
 }
 
+/* ================================= STATUS MATCH JADWAL ================================= */
+.match-status{
+    font-size:12px;
+    font-weight:600;
+    color:#00ff66;
+    margin-top:8px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+
 /* ================================= ABOUT CARD ================================= */
 .about-card{
     max-width:1100px;
