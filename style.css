@@ -419,6 +419,13 @@ footer h3{
     margin-top:15px;
     opacity:.8;
     font-size:14px;
+    line-height:1.8;
+}
+.footer-credit strong:last-child{
+    background: linear-gradient(90deg, #00ff66, #ff3030);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 /* ================================= SCROLL ANIMATION ================================= */
