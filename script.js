@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const aboutModal = document.getElementById("aboutModal");
     const closeModal = document.getElementById("closeModal");
 
-    const groupLink = "https://chat.whatsapp.com/KbWf8mrpRey1tIaZ6NJAh0?s=cl&p=a&ilr=4";
+    const groupLink = "https://chat.whatsapp.com/LgRgP9R4BUO3jbGTr1RHSE?s=cl&p=a&ilr=1&amv=2";
 
     // Toggle menu
     if(menuBtn) {
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Contact + Join
     if(contactBtn) {
         contactBtn.addEventListener("click", function() {
-            window.open("https://wa.me/6282239959100", "_blank");
+            window.open("https://wa.me/628133244757", "_blank");
         });
     }
 
